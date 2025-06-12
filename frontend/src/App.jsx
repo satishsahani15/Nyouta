@@ -15,7 +15,7 @@ const App = () => {
       </Routes>
       <Footer/>
     </div>
-  )
+  ) 
 }
 
 export default App

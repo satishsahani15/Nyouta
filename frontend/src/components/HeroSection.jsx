@@ -9,10 +9,10 @@ const HeroSection = () => {
 
   // Sample wedding images for the slider
   const sliderImages = [
-    "/wedding-hands.jpg",
-    "/placeholder.svg?height=400&width=1200",
-    "/placeholder.svg?height=400&width=1200",
-    "/placeholder.svg?height=400&width=1200",
+    "/a1.jpg",
+    "/a2.jpg?height=400&width=1200",
+    "/a3.jpg?height=400&width=1200",
+    "/a4.svg?height=400&width=1200",
   ]
 
   // Auto-play functionality

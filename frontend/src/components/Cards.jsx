@@ -1,11 +1,9 @@
 "use client"
 
 const Cards = () => {
-  // For demo purposes, using console.log. Replace with actual navigation logic
   const handleNavigation = (category) => {
     console.log(`Navigating to: ${category}`)
-    // Example navigation - replace with your routing logic
-    // navigate(`/category/${category.toLowerCase().replace(/\s+/g, '-')}`)
+    // Replace with your actual navigation logic
   }
 
   const cardCategories = [
@@ -23,68 +21,75 @@ const Cards = () => {
 
   const handleShopNow = () => {
     console.log("Shop Now clicked - Navigate to shop page")
-    // Add navigation to main shop page
-    // navigate('/shop')
   }
 
   return (
-    <div className="w-full bg-amber-900 py-16 px-4">
+    <div className="container mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-16" style={{ backgroundColor: "#8B4513" }}>
       <div className="max-w-6xl mx-auto">
-        {/* Cards Grid Container */}
-        <div className="relative">
-          {/* Top Row Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
-            {cardCategories.slice(0, 4).map((card) => (
-              <div
-                key={card.id}
-                onClick={() => handleNavigation(card.title)}
-                className="flex flex-col items-center cursor-pointer group transition-transform duration-200 hover:scale-105"
-              >
-                {/* Card Shape */}
-                <div className="w-24 h-32 md:w-32 md:h-40 bg-white rounded-t-full mb-4 shadow-lg group-hover:shadow-xl transition-shadow duration-200 flex items-center justify-center">
-                  <div className="w-16 h-20 md:w-20 md:h-24 bg-gray-100 rounded-t-full flex items-center justify-center">
-                    <div className="w-8 h-8 bg-gray-300 rounded-full opacity-50"></div>
-                  </div>
-                </div>
-                {/* Card Title */}
-                <h3 className="text-white text-sm md:text-base font-medium text-center leading-tight px-2">
-                  {card.title}
-                </h3>
-              </div>
-            ))}
-          </div>
-
-          {/* Central Shop Now Button */}
-          <div className="flex justify-center mb-8">
-            <button
-              onClick={handleShopNow}
-              className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+        {/* Top Row Cards */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 lg:gap-12 mb-12">
+          {cardCategories.slice(0, 4).map((card) => (
+            <div
+              key={card.id}
+              onClick={() => handleNavigation(card.title)}
+              className="flex flex-col items-center cursor-pointer group transition-transform duration-200 hover:scale-105"
             >
-              SHOP NOW
-            </button>
-          </div>
-
-          {/* Bottom Row Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {cardCategories.slice(4, 8).map((card) => (
-              <div
-                key={card.id}
-                onClick={() => handleNavigation(card.title)}
-                className="flex flex-col items-center cursor-pointer group transition-transform duration-200 hover:scale-105"
-              >
-                {/* Card Shape */}
-                <div className="w-24 h-32 md:w-32 md:h-40 bg-white rounded-t-full mb-4 shadow-lg group-hover:shadow-xl transition-shadow duration-200 flex items-center justify-center">
-                  <div className="w-16 h-20 md:w-20 md:h-24 bg-gray-100 rounded-t-full flex items-center justify-center">
-                    <div className="w-8 h-8 bg-gray-300 rounded-full opacity-50"></div>
-                  </div>
-                </div>
-                {/* Card Title */}
-                <h3 className="text-white text-sm md:text-base font-medium text-center leading-tight px-2">
-                  {card.title}
-                </h3>
+              {/* Perfect Arch-shaped Card */}
+              <div className="w-32 h-40 md:w-40 md:h-48 lg:w-44 lg:h-52 mb-6 relative">
+                <div
+                  className="w-full h-full bg-white shadow-md group-hover:shadow-lg transition-shadow duration-200"
+                  style={{
+                    borderRadius: "50% 50% 0 0",
+                  }}
+                />
               </div>
-            ))}
-          </div>
+              {/* Card Title */}
+              <h3 className="text-white text-sm md:text-base lg:text-lg font-medium text-center leading-tight px-1 max-w-36">
+                {card.title}
+              </h3>
+            </div>
+          ))}
+        </div>
+
+        {/* Central Hexagonal Shop Now Button */}
+        <div className="flex justify-center mb-12">
+          <button
+            onClick={handleShopNow}
+            className="relative text-white font-bold py-4 px-10 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
+            style={{
+              backgroundColor: "#E91E63",
+              clipPath: "polygon(15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%)",
+              minWidth: "180px",
+              minHeight: "60px",
+            }}
+          >
+            <span className="relative z-10">SHOP NOW</span>
+          </button>
+        </div>
+
+        {/* Bottom Row Cards */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 lg:gap-12">
+          {cardCategories.slice(4, 8).map((card) => (
+            <div
+              key={card.id}
+              onClick={() => handleNavigation(card.title)}
+              className="flex flex-col items-center cursor-pointer group transition-transform duration-200 hover:scale-105"
+            >
+              {/* Perfect Arch-shaped Card */}
+              <div className="w-32 h-40 md:w-40 md:h-48 lg:w-44 lg:h-52 mb-6 relative">
+                <div
+                  className="w-full h-full bg-white shadow-md group-hover:shadow-lg transition-shadow duration-200"
+                  style={{
+                    borderRadius: "50% 50% 0 0",
+                  }}
+                />
+              </div>
+              {/* Card Title */}
+              <h3 className="text-white text-sm md:text-base lg:text-lg font-medium text-center leading-tight px-1 max-w-36">
+                {card.title}
+              </h3>
+            </div>
+          ))}
         </div>
       </div>
     </div>
